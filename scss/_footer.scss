@@ -1,0 +1,169 @@
+@use "vars" as *;
+
+#footer{
+	@include font-size(14);
+	a{
+		color: #222;
+	}
+	.footer-nav{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: 10px;
+		margin-bottom: 32px;
+		&__ttl{
+			display: block;
+			margin-bottom: 18px;
+			font-weight: 500;
+			color: #7a7a7a;
+		}
+		&__menu{
+			margin-bottom: 40px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			li{
+				margin-bottom: 18px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				a{
+					display: inline-block;
+					@include font-size(16);
+					font-weight: 500;
+					&:hover{
+						text-decoration: underline;
+						opacity: 1;
+					}
+				}
+			}
+		}
+		&__img{
+			margin-bottom: 10px;
+		}
+	}
+	.footer-note{
+		text-align: center;
+		color: #7a7a7a;
+		@include font-size(12);
+		line-height: 1.8;
+		margin-bottom: 20px;
+	}
+	.footer-links{
+		@include flex(center,start,wrap);
+		li{
+			margin: 0 15px 10px;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				text-decoration: underline;
+			}
+		}
+	}
+	.footer-nooty{
+		text-align: center;
+		a{
+			display: inline-block;
+		}
+	}
+	.copyright{
+		text-align: center;
+		@include font-size(12);
+		color: #7a7a7a;
+	}
+}
+
+.search-item{
+	width: 38px;
+	cursor: pointer;
+	position: fixed;
+	right: 15px;
+	border-radius: 5px;
+	z-index: 10;
+	top: 90px;
+	@include smooth-transition;
+	&:hover{
+		opacity: 0.7;
+	}
+}
+
+.popup{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+	padding: 30px 15px;
+	background: rgba(black,0.8);
+	@include flex(center,center);
+	@include font-size(16);
+	@include smooth-transition;
+	&.active{
+		opacity: 1;
+		visibility: visible;
+		z-index: 9999;
+		.popup-content{
+			transform: scale(1);
+			transition-delay: 0.3s;
+		}
+	}
+	&-bg{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	&-content{
+		width: 100%;
+		max-width: 720px;
+		position: relative;
+		z-index: 2;
+		background: white;
+		padding: 50px 30px 30px;
+		border-radius: 30px;
+		transform: scale(0);
+		@include smooth-transition;
+
+		&__close{
+			position: absolute;
+			top: 15px;
+			right: 30px;
+			width: 20px;
+			cursor: pointer;
+			@include smooth-transition;
+			&:hover{
+				opacity: 0.7;
+			}
+		}
+	}
+	&-search{
+		@include flex(0,0,wrap);
+		&__input{
+			width: calc(100% - 104px);
+			.form-control{
+				border-radius: 4px 0 0 4px;
+			}
+		}
+		&__btn{
+			width: 104px;
+			height: 48px;
+			font-weight: bold;
+			@include flex(center,center,wrap);
+			line-height: 1;
+			background: #ee0033;
+			border-radius: 0 4px 4px 0;
+			color: white;
+			cursor: pointer;
+			border: none;
+			outline: none;
+			@include smooth-transition;
+			&:hover{
+				opacity: 0.7;
+			}
+		}
+	}
+}
