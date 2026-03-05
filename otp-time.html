@@ -45,7 +45,7 @@
 				</span>
 			</div>
 		</header>
-		<main id="page-index" class="wrapper">
+		<main id="page-otp-time" class="wrapper">
 			<section class="sec-content">
 				<div class="inner">
 					<nav>
@@ -57,24 +57,27 @@
 					</nav>
 					<div class="client-block">
 						<div class="client-block__img">
-							<img src="./img/search.png" alt="img">
+							<img src="./img/otp.png" alt="img">
 						</div>
-						<h2 class="client-block__ttl">TRA CỨU Điểm xếp hạng khách hàng</h2>
-						<div class="client-block__ct">
-							<div class="client-block__ct-item">
-								<input type="text" class="form-control" placeholder="Số điện thoại">
-								<small>Số điện thoại</small>
-							</div>
-							<div class="client-block__ct-item">
-								<input type="text" class="form-control" placeholder="Số giấy tờ tùy thân">
-								<small>Số giấy tờ tùy thân</small>
-							</div>
-							<p>
-								<i>Điểm xếp hạng khách hàng do khách hàng thực hiện tra cứu trên ứng dụng Viettel Money của Viettel</i>
-							</p>
+						<h2 class="client-block__ttl">NHẬP MÃ XÁC THỰC</h2>
+						<div class="client-block__otp">
+							<p class="c-al--c"> Mã xác thực được gửi về số điện thoại<strong>0974***388</strong>của bạn. Sau<strong class="c-fc--red">02:00</strong>chưa nhận được, chọn “Nhận lại mã xác thực” để gửi lại yêu cầu gửi mã. </p>
+							<ul class="client-block__otp-code">
+								<li><input type="text" class="form-control" value="1"></li>
+								<li><input type="text" class="form-control" value="2"></li>
+								<li><input type="text" class="form-control" value="3"></li>
+								<li><input type="text" class="form-control" value="4"></li>
+								<li><input type="text" class="form-control" value="5"></li>
+							</ul>
 						</div>
 						<div class="client-block__sub">
-							<button type="button" class="c-btn__01">Tiếp tục</button>
+							<button type="button" class="c-btn__01">Xác nhận</button>
+						</div>
+						<div class="c-al--c">
+							<a href="" class="client-block__link"> Nhận lại mã xác thực </a>
+						</div>
+						<div class="client-block__otp-error c-al--c">
+							<span> Vui lòng đợi sau 01:30 để lấy mã OTP mới </span>
 						</div>
 					</div>
 				</div>
@@ -101,17 +104,18 @@
 					</div>
 				</div>
 			</section>
-			<div class="popup popup--small" id="popup-error">
+			<div class="popup popup--small" id="popup-otp">
 				<div class="popup-bg js-close"></div>
 				<div class="popup-content">
 					<div class="popup-content__close popup-content__close--02 js-close">
 						<img src="./img/close02.png" alt="img">
 					</div>
 					<div class="popup-img">
-						<img src="./img/error.png" alt="img">
+						<img src="./img/otp.png" alt="img">
 					</div>
+					<h3 class="popup-content__ttl">XÁC THỰC OTP</h3>
 					<div class="popup-error c-al--c">
-						<p> Thông tin không chính xác.<br class="sp">Vui lòng kiểm tra và nhập lại. </p>
+						<p> Quý khách đã nhập sai mã OTP quá số lần cho phép.<br> Vui lòng thử lại sau 10 phút </p>
 						<button type="button" class="c-btn__01 js-close">Đóng</button>
 					</div>
 				</div>

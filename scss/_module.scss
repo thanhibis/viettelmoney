@@ -4,7 +4,7 @@
 .inner {
 	display: block;
 	max-width: 1320px;
-	padding: 0 12px;
+	padding: 0 20px;
 	margin: 0 auto;
 }
 
@@ -12,6 +12,28 @@
 	padding-top: 68px;
 }
 
+.breadcrumb{
+	@include flex(0,0,wrap);
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	&-item{
+		&:before{
+			display: inline-block;
+			padding-right: 0.8rem;
+			padding-left: .8rem;
+			content: "/";
+			color: #6c757d;
+		}
+		&:nth-child(1){
+			&:before{
+				display: none;
+			}
+		}
+		a{
+			color: #EE0033;
+		}
+	}
+}
 
 //form input
 .form-control{
@@ -20,9 +42,12 @@
 	height: 48px;
 	background: white;
 	border: 1px solid #ccc;
-	font-weight: 500;
 	padding: 5px 10px;
 	@include font-size(16);
+	border-radius: 8px;
+	@include mq(){
+		@include font-size(15);
+	}
 	&:focus{
 		border-color: #66afe9;
 		outline: 0;

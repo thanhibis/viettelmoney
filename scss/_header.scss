@@ -14,6 +14,8 @@
 	.header-logo{
 		display: block;
 		width: 146px;
+		position: relative;
+		z-index: 10;
 	}
 	.header-nav{
 		@include mq(md-min){
@@ -26,11 +28,9 @@
 			left: 0;
 			right: 0;
 			height: 100vh;
-			padding: 60px 20px 0;
+			padding: 80px 20px;
 			overflow-y: scroll;
-			&.active{
-				display: block;
-			}
+			background: white;
 		}
 		&__menu{
 			display: flex;
@@ -46,6 +46,9 @@
 					font-weight: 600;
 					color: black;
 					padding: 0 16px;
+					@include mq(tb){
+						padding: 20px 0;
+					}
 					&:hover{
 						color:#ee0033;
 						opacity: 1;
@@ -55,31 +58,30 @@
 		}
 	}
 	.js-mobile {
-		width: 26px;
-		height: 30px;
+		width: 56px;
 		position: absolute;
-		right: 20px;
-		@include v-align;
+		top: 0;
+		right: 0;
+		bottom: 0;
 		cursor: pointer;
 		z-index: 12;
 		display: none;
 		@include mq(tb){
-			display: block;
+			@include flex(center,center)
 		}
 		span{
-			position: absolute;
-			@include v-align;
+			position: relative;
 			display: block;
-			width: 100%;
+			width: 24px;
 			height: 2px;
-			background: #333;
+			background: #222222;
 			border-radius: 3px;
 			&:before,&:after{
 				position: absolute;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: #333;
+				background: #222222;
 				content: '';
 				-webkit-transition: -webkit-transform 0.3s;
 				transition: transform 0.3s;
@@ -88,12 +90,12 @@
 			&:before{
 				-webkit-transform: translateY(-250%);
 				transform: translateY(-250%);
-				top: -6px;
+				top: -2px;
 			}
 			&:after{
 				-webkit-transform: translateY(250%);
 				transform: translateY(250%);
-				bottom: -6px;
+				bottom: -2px;
 			}
 		}
 		&--close {
@@ -101,7 +103,7 @@
 				background-color: transparent;
 				&:before,&:after{
 					width: 100%;
-					background: #333;
+					background: #222222;
 				}
 				&:before {
 					-webkit-transform: translateY(0) rotate(45deg);
