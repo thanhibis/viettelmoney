@@ -300,22 +300,6 @@ $breakpoints: (
 
 
 
-//marginPC and SP
-@for $i from 1 through 100 {
-	@include mq(md-min){
-		.mbpc-#{$i} {
-			margin-bottom: $i + px !important;
-		}
-	}
-	@include mq(){
-		.mbsp-#{$i} {
-			margin-bottom: $i + px !important;
-		}
-	}
-}
-.mb0{
-	margin-bottom: 0 !important;
-}
 
 
 //====================================================
