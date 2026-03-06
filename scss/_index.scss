@@ -93,10 +93,14 @@
 		&-error{
 			color: #EE0033;
 			padding-top: 20px;
+			display: none;
 			span{
 				display: inline-block;
 				background: rgba(#EE00330F,0.06);
 				padding: 10px 15px;
+			}
+			&.active{
+				display: block;
 			}
 		}
 	}
@@ -138,3 +142,4 @@
 	max-width: 694px;
 	margin: 0 auto;
 }
+

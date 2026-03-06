@@ -44,3 +44,24 @@ setTimeout(function () {
         $('.client-block__otp-code .form-control').addClass('focus');
     }
 },700);
+
+
+
+//show demo
+$('.js-popup-error').on('click', function(){
+    $("html").toggleClass("js-locked");
+    $("#popup-error").addClass("active");
+});
+
+$('.js-popup-otp').on('click', function(){
+    $("html").toggleClass("js-locked");
+    $("#popup-otp").addClass("active");
+});
+$('.js-check-code').on('click', function(){
+    var checkload = $('.client-block__otp-code .form-control').val();
+    if(checkload === '') {
+        $('.client-block__otp-code .form-control').removeClass('focus');
+    } else {
+        $('.client-block__otp-code .form-control').addClass('focus');
+    }
+});
